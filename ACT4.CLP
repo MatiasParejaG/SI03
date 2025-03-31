@@ -7,9 +7,8 @@
    (multislot Colores)
 )
 
-; Función auxiliar para verificar si todos los elementos de listaColores están en coloresBandera
 (deffunction subset-check (?colores-busqueda ?colores-bandera)
-   (if (eq (length$ ?colores-busqueda) 0) then TRUE  ; Si no hay colores a buscar, es subconjunto
+   (if (eq (length$ ?colores-busqueda) 0) then TRUE  
       else
       (if (member$ (first$ ?colores-busqueda) ?colores-bandera)
          then (subset-check (rest$ ?colores-busqueda) ?colores-bandera)
@@ -18,7 +17,6 @@
    )
 )
 
-; Base de conocimientos con países de América del Sur y los colores de sus banderas
 (deffacts Paises
    (Pais (Nombre Argentina) (Bandera Blanco Celeste))
    (Pais (Nombre Bolivia) (Bandera Rojo Amarillo Verde))
